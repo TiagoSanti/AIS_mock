@@ -14,7 +14,7 @@ import DecisionTreePlot from '../../components/DecisionTreePlot';
 import { toast } from 'react-toastify';
 
 function DataAnalysis() {
-  const ADDRESS = process.env.REACT_APP_ADDRESS;
+  const ADDRESS = "http://localhost:8000";
   const [fileId, setFileId] = useState(null);
   const [fileName, setFileName] = useState(null);
   const [uploadCompleted, setUploadCompleted] = useState(false);
@@ -166,6 +166,27 @@ function DataAnalysis() {
   }
 
   const getData = async (fileName, method, time, maxAttempts, extension) => {
+    const url_base = `${fileId}/${fileName}_${method}.${extension}`;
+    const url = `${ADDRESS}/datasets/${url_base}`;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch file: ${response.statusText}`);
+      }
+      if (extension === "json") {
+        return await response.json();
+      } else if (extension === "png") {
+        return await response.blob().then(blob => URL.createObjectURL(blob));
+      } else {
+        return await response.text();
+      }
+    } catch (error) {
+      console.error('Error while fetching file:', error);
+      return null;
+    }
+  }
+
+  const getCloudData = async (fileName, method, time, maxAttempts, extension) => {
     const BUCKET_NAME = process.env.REACT_APP_BUCKET_NAME;
     const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
     const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -457,9 +478,8 @@ function DataAnalysis() {
         const csvData = await getData(fileName, 'superficial_analysis',15,10,"csv");
         if (csvData) {
           const rows = csvData.split('\n');
-          const headersRow = rows[0].split(',');
-          const vKeys = headersRow.slice(2).filter(key => key !== "Time" && (key.startsWith('V') || key === "Amount"));
-          console.log(vKeys);
+          const headersRow = rows[0].split(',').map(header => header.replace(/[\r\n]+/g, '').trim());
+          const vKeys = headersRow.slice(2).filter(key => key !== "Time" && key !== "Amount");
           const meanRow = rows.find(row => row.startsWith('Média'));
           const modeRow = rows.find(row => row.startsWith('Moda'));
           const medianRow = rows.find(row => row.startsWith('Mediana'));

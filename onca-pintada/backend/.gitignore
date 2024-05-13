@@ -1,3 +1,5 @@
 venv/
+.venv/
+datasets/
 .gcloudignore/
 __pycache__/

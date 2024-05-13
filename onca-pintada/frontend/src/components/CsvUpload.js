@@ -8,10 +8,9 @@ import '../styles/csv-upload.css';
 import send from '../assets/send.svg';
 
 const CsvUpload = ({ onUploadSuccess }) => {
-
   const [file, setFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
-  const [uploading, setUploading] = useState(false); 
+  const [uploading, setUploading] = useState(false);
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -23,13 +22,11 @@ const CsvUpload = ({ onUploadSuccess }) => {
       return;
     }
 
-    const maxSize = 200 * 1024 * 1024;
+    const maxSize = 200 * 1024 * 1024; // 200MB
     if (selectedFile.size > maxSize) {
-      toast.error(
-        'O arquivo selecionado é maior que 200MB. Por favor, escolha um arquivo menor.'
-      );
+      toast.error('O arquivo selecionado é maior que 200MB. Por favor, escolha um arquivo menor.');
       setFile(null);
-      setUploadProgress(0); 
+      setUploadProgress(0);
       return;
     }
     setUploading(false);
@@ -37,7 +34,6 @@ const CsvUpload = ({ onUploadSuccess }) => {
   };
 
   const handleUpload = async () => {
-    
     if (!file) {
       toast.error('Por favor, escolha um arquivo.');
       return;
@@ -46,69 +42,28 @@ const CsvUpload = ({ onUploadSuccess }) => {
     const fileId = uuidv4();
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('id', fileId);
-
-    const OBJECT_NAME = fileId;
-    const BUCKET_NAME = 'banks-dev-392615.appspot.com';
-    const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
-    const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
-    const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET
 
     try {
       setUploading(true);
-      const response = await fetch('https://oauth2.googleapis.com/token', {
+      const response = await fetch(`http://localhost:8000/upload/${fileId}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          grant_type: 'refresh_token',
-          refresh_token: REFRESH_TOKEN,
-          client_id: CLIENT_ID,
-          client_secret: CLIENT_SECRET, 
-        }),
+        body: formData,
       });
 
-      console.log(REFRESH_TOKEN);
-
-      const data = await response.json();
-      const OAUTH2_TOKEN = data.access_token;
-
-      const xhr = new XMLHttpRequest();
-
-      xhr.upload.addEventListener('progress', (event) => {
-        if (event.lengthComputable) {
-          const progressPercent = (event.loaded / event.total) * 100;
-          setUploadProgress(progressPercent);
-        }
-      });
-
-      xhr.open(
-        'POST',
-        `https://storage.googleapis.com/upload/storage/v1/b/${BUCKET_NAME}/o?uploadType=media&name=${OBJECT_NAME}/${file.name}`
-      );
-      xhr.setRequestHeader('Authorization', `Bearer ${OAUTH2_TOKEN}`);
-      xhr.setRequestHeader('Content-Type', 'text/csv');
-
-      xhr.addEventListener('load', () => {
-        if (xhr.status === 200) {
-          console.log('Arquivo enviado com sucesso!');
-          toast.success('Arquivo enviado com sucesso!');
-          const fileNameWithoutExtension = file.name.split('.').slice(0, -1).join('.');
-          onUploadSuccess(fileId, fileNameWithoutExtension);
-        } else {
-          console.error('Falha ao enviar arquivo.');
-          toast.error('Falha ao enviar arquivo.');
-        }
-        setUploading(false); 
-
-      });
-
-      xhr.send(file);
+      if (response.ok) {
+        const result = await response.json();
+        toast.success('Arquivo enviado com sucesso!');
+        const fileNameWithoutExtension = file.name.split('.').slice(0, -1).join('.');
+        onUploadSuccess(fileId, fileNameWithoutExtension);
+      } else {
+        throw new Error('Falha ao enviar arquivo.');
+      }
     } catch (error) {
-      console.error(error);
-      toast.error('Ocorreu um erro no envio do arquivo');
-      setUploading(false); 
+      console.error('Error uploading file:', error);
+      toast.error('Falha ao enviar arquivo.');
+    } finally {
+      setUploading(false);
+      setUploadProgress(0);
     }
   };
 
@@ -144,7 +99,7 @@ const CsvUpload = ({ onUploadSuccess }) => {
       )}
       <div className="home_csv_info">
         <p className="home_csv_upload_limit">Limite: 200 Mb</p>
-        <a href='https://storage.googleapis.com/banks-dev-392615.appspot.com/creditcard.csv'>Clique aqui para baixar o dataset e experimentar a aplicação.</a>
+        <a href='https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud/download?datasetVersionNumber=3'>Clique aqui para baixar o dataset e experimentar a aplicação.</a>
         <p className='home_csv_upload_warning'>Ao inserir o conjunto de dados, por gentileza, verifique se o label das classes estão na coluna "Class".</p>
       </div>
     </div>
