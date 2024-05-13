@@ -1,0 +1,18 @@
+Pesquisa de Mercado
+
+Através de um formulário enviado a profissionais na área de ciência de dados, conduzimos uma pesquisa de mercado para entender melhor as necessidades, objetivos e satisfação com as ferramentas atuais. As respostas que recebemos nos forneceram valiosos insights sobre como podemos aprimorar nosso produto para melhor atender às demandas deste público.
+
+Em termos de necessidades principais, a demanda por ferramentas que suportem a construção de pipelines de maneira prática é bastante alta, assim como a necessidade de plataformas low code. Nosso produto se destaca precisamente por satisfazer estas necessidades. Entretanto, identificamos também uma necessidade de aprimorar conhecimentos em programação e estatística multivariada, bem como a demanda por profissionais com proficiência em matemática, o que são áreas que estamos comprometidos a apoiar no futuro.
+
+No que tange aos objetivos principais, os respondentes estão focados em levar a informação até a ponta da operação, gerar insights para processos e obter informações que levem a margens de lucro maiores. Nosso produto está bem alinhado para atender a esses objetivos, graças à sua capacidade de simplificar complexidades e produzir insights valiosos.
+
+Em relação à satisfação com as ferramentas de data science, descobrimos que, em média, os usuários estão satisfeitos com as ferramentas que utilizam, mas reconhecem que há espaço para melhorias. Isso nos motiva a continuar aprimorando nosso produto, buscando sempre entregar a melhor experiência possível aos usuários.
+
+Os usuários valorizam a facilidade de uso, a capacidade de lidar com grandes volumes de dados e a praticidade das ferramentas de ciência de dados. Estes são pontos fortes do nosso produto, que foi desenvolvido com foco na usabilidade, escalabilidade e eficiência.
+
+Identificamos também algumas lacunas nas ferramentas de ciência de dados atuais. Os usuários desejam mais opções nativas de análise preditiva, maior rapidez das ferramentas e mais soluções plug-and-play. Esses são desafios que estamos ansiosos para resolver em nosso roteiro de desenvolvimento de produto.
+
+Por fim, entre as técnicas de análise de dados mais utilizadas, a coleta e limpeza de dados, análise descritiva e preditiva, bem como a classific
+ação supervisionada se destacam. Nosso produto já oferece suporte a várias dessas técnicas, e estamos comprometidos a expandir ainda mais nossas funcionalidades.
+
+Em resumo, nossas descobertas de pesquisa de mercado nos permitem entender melhor as necessidades e aspirações dos profissionais de ciência de dados. Estamos empenhados em atender a essas necessidades, preencher lacunas e oferecer uma ferramenta robusta e fácil de usar, que pode realmente impulsionar o sucesso dos nossos usuários na sua jornada de ciência de dados.

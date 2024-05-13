@@ -1,0 +1,13 @@
+Durante o desenvolvimento, usamos diversas estratégias, ferramentas e conceitos de Engenharia de Software que fazem sentido para o nosso contexto de desenvolvimento, com o objetivo de maximizar a eficiência e qualidade do nosso produto, sempre buscando as boas práticas:
+
+- Utilizamos o GitHub Projects e metodologia Kanban junto Scrum para organização de tarefas e gerenciamento do nosso progresso no qual separamos as entregas por iterações de dois dias
+
+- Na área de Gerência de Configuração
+	- definimos branch model Github Flow
+	- regras para revisão de PR
+	- commits semânticos
+	- integração e implantação contínua
+	- testes automatizados para garantir qualidade do software
+	usando Github Actions
+
+- Aplicamos Cloud Computing para hospedagem da aplicação e armazenamento de dados, garantindo escalabilidade, disponibilidade e segurança das operações

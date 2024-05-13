@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "plenary-song-391803",
+  "private_key_id": "ffc467b8f2db273002eeda0f30705f5fd177c00d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBbxmQ7IXLRkv7\nE6SnLyulpuxD6x117QRdKkZBunfb1q44GHLp/s2i9+N4CTpalncRjkrUNOHjmmnH\nIb6KP+Dp2ag5y4vYAJmXNq7XDXS93JZZD9nrJDhSn0tqPkwiRUxuEDAIKLa+6ViV\nSO3AW/3hYrO0/mdqXe6/RnQoqElxWd1mEGmxFDYj1vBHwFyCC9BkaaDyUyG07vJR\n3kyGFGEy5Oz8Kq23QTn/f9CpWXENdWisznF3pBi+QAbMv2CqMhHUyRA/UX0RB7dC\nSKvVgCAvJ8AYsBN53+sYoXEkqmK9NkgM5jjFGPZJKRmYVfH8X8zz9XTgTUS2jm+5\nUizU61UTAgMBAAECggEAHBPtaRz8GtKcatiiGOZ+9m+xcfZp81kxPfjJ8/aGOXID\nHf9mhtLGtLY43Y6xWr7mj7TQ5da7R1d9rTsXtmepVSiUA7epF/SWVt3IKU05uemQ\nJWNopXo/drbKsqRSVtMqUfuljTmjtTiX9Ct+32I7CwFRxp77EfSKmFc4u0IaTwqU\nvBkZWIhrmar2CS1PWxVNh8nM0MUC4jWkBqLAHvTmaEazz9tZD8zKhYYbCSW2AxLd\nsjtKVH3ujg32cMVoK80vQtLE3yJH7tPJki2eJDZDrqGf0wMlX6hJcDv2G41rjtGp\nOaLsmQLJNUUNhLFX6fm6s/gsLkiAHctAXn860toc+QKBgQDi4+Ww3COKsGJhcNev\nbwYwhnEigZPx0eXzB3/IYfNKZZTdDtBC/21eoD0cpWAqvL/v45VNCPDfsjUPgwkE\nKx6305n2rqsAPba757iAQ9fq60exiVJmqGz8WWC5/MMAo61/GjgssI60ntUJ18Gf\nUMYfMpaJlofGZeeu6C/OD3X/dQKBgQDaQFkheEscy7vTNyiZ50ZNCLIbSWGg4Nde\nK22XtoWk26cyORohOK3go1qxPKd2WzvzMxAPzELQ9RnjU9W2seZoxz6pkONwLLGb\nXWI5rLfYj6WmE39bT7jsolAuCGeAVzv7J7CLJ1A0XrrI51WUACLL7iBZGQuH4yR5\nkIhoBr65ZwKBgQDC0IvYYCzkWK8gm5OWvu3BnK5nwnsVl/SpyDagB/quVqqLZLzN\nyiROq6fNgPIhwA/OGsuHabXpXUrSFuEXAy9NCBObDD8n5dWRYlW5TIeI3pyghBiM\nrPFnfBbhm3aUhfXivNCfDrp5vCeQXAGUmfaDsxwu52GNqNJWDGd/tybKQQKBgGMz\nNE/+OUXRZIHQZGfvswh4l1vHstRI3hszahC3KW+RVyGAytumw4GDPkmo5ATr2wfj\ngb1sfkIz5ZxqEo2DttKRHW49KONnrSKNA4RrePS59fTSj+SVC9yiugbyUvkGrYCu\nvZPCPrZPCF8gpskqdqZyicl1lMQi/gUzKIz/49ipAoGAL84VmZA6kX/ttbneP3jg\n034+Y+YVCTMkroFQLn413Tw27WpbnPj9OSdrFPecl+CU49keGbOdrUpKoBfRbVYb\nMTxi5ILhu77tq43S6+Po4Ky4LSyLBwNcXxNAPF5PlyTJhsi+MDNeqGXrqSxLxwgK\nGf4OcoT9IygBK/f+41rZLuU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "plenary-song-391803@appspot.gserviceaccount.com",
+  "client_id": "106701586654589318806",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/plenary-song-391803%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "backend"
+		},
+		{
+			"path": "documentation"
+		},
+		{
+			"path": ".github"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {}
+}
