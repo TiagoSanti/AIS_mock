@@ -100,7 +100,7 @@ def train_and_evaluate_model(dataset_id: str,
         model = get_selected_model(model_name, max_iter=max_iter)
         model.fit(X_train, y_train)
 
-        if model_name == 'decision_tree':
+        if not model_name == 'decision_tree':
             create_decision_tree_image(model, X.columns.tolist(), f'app/datasets/{dataset_id}/{file_name}_decision_tree')
             # save_image(dataset_id, f'{file_name}_decision_tree.png')
             # delete_decision_tree_image(f'{file_name}_decision_tree.png')

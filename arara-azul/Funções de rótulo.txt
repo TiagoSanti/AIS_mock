@@ -1,7 +1,0 @@
-Funções de rótulo
-
-=CLASSIFY_OPENAI(E2,"Classifique a seguinte notícia em termos de impacto para o mercado financeiro e seus investidores: baixo impacto, alto impacto ou impacto neutro.",FALSE,,512)
-
-=CLASSIFY_OPENAI(E0,"Classifique a seguinte notícia em termos de prazo de impacto para o mercado financeiro e seus investidores: curto prazo, longo prazo, prazo neutro.",FALSE,,512)
-
-ingles	1333-1833
